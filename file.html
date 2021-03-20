@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="" enctype="multipart/form-data">
+		<input type="file" name="pic" type="text">
+	</form>
+
+</body>
+</html>
+controller
+  
+  public function fileupload()
+  {
+  	$config['upload_path']='/upload/';
+  	$config['allowed_types']='gif|jpg|png|pdf|doc';
+  	$config[max_size]=1000;
+  	$config[max_size]=1000;
+  	$config[max_size]=700;
+  	$this->load->library('upload',$config);
+  	if(!$this->upload->do_upload('pic'))
+  	{
+  		$error=array('error'=>$this->upload->display_error());
+  	}
+  	else
+  	{
+  		$data=array('pic'=>this->upload->data());
+  		$img=$data['pic']['field_name'];
+  	}
+  	$a=array('pic'=>$img);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
